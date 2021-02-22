@@ -16,8 +16,6 @@ ActiveRecord::Schema.define(version: 2021_02_22_101510) do
     t.text "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "ancestry"
-    t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -37,7 +35,6 @@ ActiveRecord::Schema.define(version: 2021_02_22_101510) do
     t.string "image_name"
     t.string "password_digest"
     t.text "introduction"
-    t.string "senduser"
   end
 
 end
