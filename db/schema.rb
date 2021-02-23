@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_22_101510) do
+ActiveRecord::Schema.define(version: 2021_02_22_125533) do
 
   create_table "categories", force: :cascade do |t|
     t.text "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "ancestry"
-    t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -25,8 +23,8 @@ ActiveRecord::Schema.define(version: 2021_02_22_101510) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
-    t.string "senduser"
     t.integer "category_id"
+    t.integer "send_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_101510) do
     t.string "image_name"
     t.string "password_digest"
     t.text "introduction"
-    t.string "senduser"
   end
 
+  add_foreign_key "posts", "users", column: "send_user_id"
 end
