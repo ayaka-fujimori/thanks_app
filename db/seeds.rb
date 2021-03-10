@@ -9,3 +9,4 @@
 Category.create!(name: 'Thanks')
 Category.create!(name: 'Surprise')
 Category.create!(name: 'Laugh')
+Category.create!(name: 'Impression')

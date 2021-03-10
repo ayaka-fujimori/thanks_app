@@ -1,0 +1,34 @@
+<div class="main user-show">
+　<div class="container">
+    <div class="user">
+      <img src="<%= "/user_images/#{@user.image_name}" %>">
+      <h2><%= @user.name %></h2>
+      <p><%= @user.introduction %></p>
+      <% if @user.id == @current_user.id %>
+        <%= link_to("プロフィールを編集", "/users/#{@user.id}/edit") %>
+      <% end %>
+    </div>
+    
+    <ul class="user-tabs">
+        <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
+        <li class="active"><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
+        <li class="active"><%= link_to("届いたメッセージ", "/users/#{@user.id}/message") %></li>
+    </ul>
+    
+    <% @messages.each do |message| %>
+      <div class="posts-index-item">
+        <div class="post-left">
+          <img src="<%= "/user_images/#{message.user.image_name}" %>">
+        </div>
+        <div class="post-right">
+          <div class="post-user-name">
+            <%= link_to(message.user.name, "/users/#{message.user.id}") %>
+          </div>
+          <p>category:<%= link_to(message.category.name, "/posts/#{message.id}") %></p>
+          <p>to:<%= link_to(message.send_user.name, "/posts/#{message.id}") %></p>
+          <%= link_to(message.content, "/posts/#{message.id}") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

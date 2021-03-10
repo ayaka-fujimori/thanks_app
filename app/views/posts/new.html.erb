@@ -11,10 +11,9 @@
 
           <%= form_with model: @post, url: posts_create_path do |f| %>
             <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: "カテゴリーを選択して下さい" %>
-            <%= f.collection_select :send_user_id, User.all, :id, :name, include_blank: "送る相手を選択して下さい" %>
+            <%= f.collection_select :send_user_id, User.where.not(id: @current_user.id), :id, :name, include_blank: "送る相手を選択して下さい" %>
             <%= f.hidden_field :user_id, value: @current_user.id %>
             <%= f.text_area :content, size: "20x10" %>
-
             <%= f.submit "投稿" %>
           
           <% end %>

@@ -9,6 +9,7 @@
     font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
     line-height: 1.7;
     letter-spacing: 1px;
+    
   }
   
   ul, li {
@@ -35,12 +36,13 @@
   form input[type="submit"] {
     border: none;
     cursor: pointer;
+
   }
   
   /* 共通レイアウト ================================ */
   body {
     color: #2d3133;
-    background-color: #8FAC4B;
+    background: radial-gradient(#F2B9A1, #EA6264);
     margin: 0;
     min-height: 1vh;
   }
@@ -64,9 +66,11 @@
   
   /* ヘッダー ================================ */
   header {
-    height: 64px;
-    position: absolute;
-    z-index: 1;
+    height: 65px;
+    background: radial-gradient(#F2B9A1, #EA6264);
+    position: fixed;
+    top:0px;
+    z-index: 10;
     width: 100%;
   }
   
@@ -125,11 +129,9 @@
     height: auto;
     min-height: 100%;
     color: white;
-    background-color: #3ecdc6;
     background-repeat: no-repeat;
     background-position: center 50%;
     background-size: cover;
-    background-image: url("/top.jpg");
   }
   
   .top-message {
@@ -210,7 +212,7 @@
   }
   
   .form input[type="submit"] {
-    background-color: #3ecdc6;
+    background: radial-gradient(#F2B9A1, #EA6264);
     color: white;
     cursor: pointer;
     font-weight: 300;

@@ -1,0 +1,47 @@
+<div class="main posts-index">
+  <div class="container">
+    <div class="category_index">Thanks</div>
+      <div class="posts-index-item">
+        <div class="post-right">
+          <% @select_category_index1.each do |select_category_index| %>
+            <div class="category_index_item">
+              <%= link_to(select_category_index.content, "/posts/category_id: 1") %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+    <div class="category_index">Surprise</div>
+      <div class="posts-index-item">
+        <div class="post-right">
+          <% @select_category_index2.each do |select_category_index| %>
+            <div class="category_index_item">
+              <%= link_to(select_category_index.content, "/posts/category_id: 2") %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+    <div class="category_index">Laugh</div>
+      <div class="posts-index-item">
+        <div class="post-right">
+          <% @select_category_index3.each do |select_category_index| %>
+            <div class="category_index_item">
+              <%= link_to(select_category_index.content, "/posts/category_id: 3") %>
+            </div>
+          <% end %>
+        </div>
+      </div>       
+
+    <div class="category_index">Impression</div>
+      <div class="posts-index-item">
+        <div class="post-right">
+          <% @select_category_index4.each do |select_category_index| %>
+            <div class="category_index_item">
+              <%= link_to(select_category_index.content, "/posts/category_id: 4") %>
+            </div>
+          <% end %>
+        </div>
+      </div>  
+  </div>
+</div>

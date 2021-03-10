@@ -10,9 +10,11 @@
           <div class="post-user-name">
             <%= link_to(post.user.name, "/users/#{post.user.id}") %>
           </div>
+          <p>category:<%=link_to(post.category.name,"/posts/#{post.id}")%></p>
+          <p>to:<%=link_to(post.send_user.name,"/posts/#{post.id}")%></p>
           <%=link_to(post.content,"/posts/#{post.id}")%>
         </div>
-      </div>  
+      </div>
     <% end %>
   </div>
 </div>

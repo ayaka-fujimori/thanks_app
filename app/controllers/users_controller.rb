@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
+  before_action :authenticate_user, {only: [:index, :show, :edit, :update, :message]}
   before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
   before_action :ensure_correct_user, {only: [:edit, :update]}
   
@@ -59,9 +59,7 @@ class UsersController < ApplicationController
   end
   
   def login
-    # メールアドレスのみを用いて、ユーザーを取得するように書き換えてください
     @user = User.find_by(email: params[:email])
-    # if文の条件を&&とauthenticateメソッドを用いて書き換えてください
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       flash[:notice] = "ログインしました"
@@ -92,4 +90,9 @@ class UsersController < ApplicationController
     end
   end
   
+  def message
+    @messages = Post.where(send_user_id: @current_user.id)
+    @user = User.find_by(id: params[:id])
+  end
+
 end

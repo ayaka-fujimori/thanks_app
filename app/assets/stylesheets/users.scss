@@ -1,11 +1,12 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.users-heading {
+.users-heading, .form-heading {
     font-weight: 300;
     margin: 60px 0 20px;
     font-size: 48px;
-    color: #bcc8d4;
+    color: #1f2327;
+    background: linear-gradient(transparent 70%, #e68182 70%);
   }
   
   .users-index-item {
@@ -30,7 +31,7 @@
   }
   
   .user-name a:hover {
-    color: #3ecdc6;
+    color:#EA6264;
   }
   
   .user-left {
@@ -99,7 +100,7 @@
   }
   
   .user-tabs li.active {
-    border-bottom: 2px solid #3ecdc6;
+    border-bottom: 2px solid #EA6264;
   }
   
   .user-tabs li.active a {
@@ -116,4 +117,3 @@
   .users-form input {
     margin-bottom: 15px;
   }
-  
